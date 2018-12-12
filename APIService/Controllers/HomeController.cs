@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using APIService.Models;
 
 namespace APIService.Controllers
 {
@@ -13,18 +14,20 @@ namespace APIService.Controllers
             return View();
         }
 
-        public ActionResult About()
+        [HttpGet]
+        public ViewResult Check()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Title = "Check";
 
             return View();
         }
-
-        public ActionResult Contact()
+        [HttpPost]
+        public ViewResult Check(ClientRequest client)
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Title = "Check";
 
-            return View();
+
+            return View("Response", client);
         }
     }
 }

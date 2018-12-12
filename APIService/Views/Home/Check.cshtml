@@ -1,0 +1,21 @@
+﻿@model APIService.Models.ClientRequest
+
+@{
+    ViewBag.Title = "Check";
+}
+
+<!Doctype html>
+<html>
+<head>
+    <title>
+        Test
+    </title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+
+        <p>Enter URI: @Html.TextBoxFor(x => x.endPoint)</p>
+    }
+</body>
+</html>
