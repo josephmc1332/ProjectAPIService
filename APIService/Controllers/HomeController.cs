@@ -24,7 +24,7 @@ namespace APIService.Controllers
         [HttpPost]
         public ViewResult Check(ClientRequest client)
         {
-            ViewBag.Title = "Check";
+            ViewBag.Title = "Response";
 
 
             return View("Response", client);

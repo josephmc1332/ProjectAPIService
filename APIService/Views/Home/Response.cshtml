@@ -3,7 +3,16 @@
 @{
     ViewBag.Title = "Response";
 }
+<style>
+    .head {
+        text-align : left;
+        font-size : xx-large;
+    }
+</style>
 
-<h1>@Model.MakeRequest()</h1>
+<h1 class="head">Data:</h1>
+
+    <p class="container">@Model.MakeRequest()</p>
+
 
 
