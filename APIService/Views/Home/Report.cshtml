@@ -1,0 +1,31 @@
+﻿@model APIService.Models.WeatherProfile
+
+@{
+    ViewBag.Title = "Report";
+}
+<style>
+    .weth {
+         text-align : center;
+        border : dashed;
+    }
+    .centerImg {
+        text-align : center;
+        display : block;
+    }
+    
+</style>
+<h2 style="text-align : center">Your Weather Report</h2>
+@if (Model.BuildURI() > 60)
+{
+    <img src="~/Images/SunIcon.jpg" alt="Sun Icon" height="40" width="40" class="center-block"/>
+    <h2 class="weth">@Model.BuildURI() degrees</h2>
+}
+@if (Model.BuildURI() < 60)
+{
+    <div>
+    <img src="~/Images/ColdWeatherIcon.png" alt="Cold Icon" height="40" width="40" class="center-block"/>
+    <h2 class="weth">@Model.BuildURI() degrees</h2>
+    </div>
+}
+
+

@@ -1,0 +1,13 @@
+﻿@model APIService.Models.WeatherProfile
+
+@{
+    ViewBag.Title = "Weather";
+}
+
+@using (Html.BeginForm("Weather", "Home", FormMethod.Post))
+{
+    <p>Enter Zip Code: @Html.TextBoxFor(x => x.ZipCode)</p>
+    <p>Enter Country Code: @Html.TextBoxFor(x => x.CountryCode)</p>
+    <input type="submit" value="submit" />
+}
+
