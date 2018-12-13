@@ -15,16 +15,16 @@
     
 </style>
 <h2 style="text-align : center">Your Weather Report</h2>
-@if (Model.BuildURI() > 60)
+@if (Model.CollectTemp() > 60)
 {
     <img src="~/Images/SunIcon.jpg" alt="Sun Icon" height="40" width="40" class="center-block"/>
-    <h2 class="weth">@Model.BuildURI() degrees</h2>
+    <h2 class="weth">@Model.Temp degrees in @Model.CollectCity()</h2>
 }
-@if (Model.BuildURI() < 60)
+@if (Model.CollectTemp() < 60)
 {
     <div>
     <img src="~/Images/ColdWeatherIcon.png" alt="Cold Icon" height="40" width="40" class="center-block"/>
-    <h2 class="weth">@Model.BuildURI() degrees</h2>
+    <h2 class="weth">@Model.Temp degrees in @Model.CollectCity()</h2>
     </div>
 }
 

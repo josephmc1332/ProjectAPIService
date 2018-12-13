@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Json;
 
 namespace APIService.Models
 {
@@ -9,49 +10,79 @@ namespace APIService.Models
     {
         public string ZipCode { get; set; }
         public string CountryCode { get; set; }
-          
-        
+        public int Temp { get; set; }
+        public string URI { get; set; }
+        public string Response { get; set; }
+        public string City { get; set; }
 
         public string apiCall = "http://api.openweathermap.org/data/2.5/weather";
-        public string complete = string.Empty;
 
-        public int BuildURI()
+        public int CollectTemp()
+        {
+            BuildURI();
+            FindTemp(Response);
+            return Temp;
+        }
+        public string CollectCity()
+        {
+            FindCity(Response);
+            return City;
+        }
+        public void BuildURI()
         {
             string addZipCountry = "?zip=" + ZipCode + "," + CountryCode;
             string addUnit = "&units=imperial";
             string key = "&appid=2700d650159919f352b27e0c318d5beb";
 
-            complete = apiCall + addZipCountry + addUnit + key;
+            URI = apiCall + addZipCountry + addUnit + key;
 
-            return Convert.ToInt32(Send(complete));
+            Send(URI);
         }
-        public string Send(string endPoint)
+        public void Send(string endPoint)
         {
-            endPoint = complete;
+            endPoint = URI;
             ClientRequest client = new ClientRequest();
             client.endPoint = endPoint;
-
-            return FindTemp(client.MakeRequest());
+            Response = client.MakeRequest();
         }
-        public string FindTemp(string temp)
+        public void FindCity(string data)
+        {
+            int i = 0;
+            bool flag = false;
+
+            while (i < data.Length)
+            {
+                if(data.Substring(i,6) == "\"name\"")
+                {
+                    i += 8;
+                    while(data[i] != '"')
+                    {
+                        City += data[i];
+                        i++;
+                        flag = true;
+                    }
+                    if (flag)
+                        break;
+                }
+                i++;
+            }
+        }
+        public void FindTemp(string data)
         {
             int i = 0;
             string cutTemp = string.Empty;
-            char[] charray = new char[temp.Length];
-            charray = temp.ToCharArray();
             int count = 0;
 
-            while (i < temp.Length)
+            while (i < data.Length)
             {
-                if(temp.Substring(i,4) == "temp")
-                {
-                    
+                if(data.Substring(i,4) == "temp")
+                {  
                     i += 4;
                     while(count < 2)
                     { 
-                        if(char.IsDigit(charray[i]))
+                        if(char.IsDigit(data[i]))
                         {
-                            cutTemp += charray[i];
+                            cutTemp += data[i];
                             count++;
                         }   
                         i++;
@@ -63,7 +94,7 @@ namespace APIService.Models
                 }
                 i++;
             }
-            return cutTemp;
+            Temp = Convert.ToInt32(cutTemp);
         }
     }
 }
