@@ -9,7 +9,7 @@ namespace APIService.Models
 {
     public class ClientRequest
     {
-        public string endPoint { get; set; }
+        public string EndPoint { get; set; }
 
         public string MakeRequest()
         {
@@ -26,8 +26,6 @@ namespace APIService.Models
                 {
                     throw new ApplicationException("error code:  " + response.StatusCode.ToString());
                 }
-
-
                 using (Stream streamResponse = response.GetResponseStream())
                 {
                     if (streamResponse != null)
@@ -38,7 +36,6 @@ namespace APIService.Models
                         }
                     }
                 }
-
                 return resp;
             }
         }
