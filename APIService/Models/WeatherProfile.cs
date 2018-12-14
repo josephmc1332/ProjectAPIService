@@ -43,7 +43,7 @@ namespace APIService.Models
         {
             endPoint = URI;
             ClientRequest client = new ClientRequest();
-            client.endPoint = endPoint;
+            client.EndPoint = endPoint;
             Response = client.MakeRequest();
         }
         public void FindCity(string data)

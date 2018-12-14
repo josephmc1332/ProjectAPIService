@@ -4,13 +4,6 @@
     ViewBag.Title = "Check";
 }
 
-<!Doctype html>
-<html>
-<head>
-    <title>
-        <a href="~/Views/Home/Check.cshtml">~/Views/Home/Check.cshtml</a>
-        Test
-    </title>
     <style>
         .box {
             padding : 35px 150px 30px 30px;
@@ -25,15 +18,11 @@
             width : 50px;
         }
    </style>
-</head>
-<body>
     @using (Html.BeginForm())
     {
         <br />
         <br />
         <div class="wrap">
-            <p class="box">Enter URI: @Html.TextBoxFor(x => x.endPoint)</p>
+            <p class="box">Enter URI: @Html.TextBoxFor(x => x.EndPoint)</p>
         </div>
     }
-</body>
-</html>

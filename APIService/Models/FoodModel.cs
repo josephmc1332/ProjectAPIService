@@ -24,7 +24,7 @@ namespace APIService.Models
             complete = EndPoint + $"select * from local.search where query=\"{Eat}\" and location=\"{City}\"&format=json";
 
             ClientRequest client = new ClientRequest();
-            client.endPoint = complete;
+            client.EndPoint = complete;
             jsonText = client.MakeRequest();
             Summary = FindName();
             return "c";

@@ -13,7 +13,6 @@ namespace APIService.Controllers
         {
             return View();
         }
-
         [HttpGet]
         public ViewResult Check()
         {
@@ -49,7 +48,7 @@ namespace APIService.Controllers
 
             return View();
         }
-      
+        [HttpPost]
         public ViewResult FindFood(FoodModel food)
         {
 

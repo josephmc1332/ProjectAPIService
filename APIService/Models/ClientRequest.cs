@@ -16,7 +16,7 @@ namespace APIService.Models
             string GET = "GET";
             string resp = string.Empty;
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(endPoint);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(EndPoint);
 
             request.Method = GET;
 
