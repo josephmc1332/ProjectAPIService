@@ -155,6 +155,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ClientRequest.cs" />
+    <Compile Include="Models\FoodModel.cs" />
     <Compile Include="Models\WeatherProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -201,6 +202,8 @@
     <Content Include="Views\Home\Response.cshtml" />
     <Content Include="Views\Home\Report.cshtml" />
     <Content Include="Views\Home\Weather.cshtml" />
+    <Content Include="Views\Home\FindFood.cshtml" />
+    <Content Include="Views\Home\FoodDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

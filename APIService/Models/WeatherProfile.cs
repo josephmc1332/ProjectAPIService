@@ -21,6 +21,7 @@ namespace APIService.Models
         {
             BuildURI();
             FindTemp(Response);
+
             return Temp;
         }
         public string CollectCity()

@@ -1,0 +1,39 @@
+﻿@model APIService.Models.FoodModel
+
+@{
+    ViewBag.Title = "FoodDetails";
+
+}
+<style>
+    .bor {
+        border: thin;
+    }
+</style>
+
+<p>@Model.Call()</p>
+@foreach (var item in Model.Summary)
+{
+    if (Model.Helper % 5 == 0)
+    {
+        <p>@item.Value</p>
+        <br />
+
+    }
+    else if (Model.Helper % 5 == 1)
+    {
+        <h2>@item.Value</h2>
+    }
+    else
+    {
+        <p>@item.Value</p>
+    }
+
+
+
+
+    Model.Helper++;
+}
+
+
+
+

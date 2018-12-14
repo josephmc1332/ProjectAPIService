@@ -3,11 +3,28 @@
 @{
     ViewBag.Title = "Weather";
 }
+<style>
+    .tebox {
+        border: thin;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: large;
+        padding-left : 50px;
+    }
+
+    .wrap {
+        padding-left : 50px;
+        border : dashed;
+    }
+</style>
 
 @using (Html.BeginForm("Weather", "Home", FormMethod.Post))
 {
-    <p>Enter Zip Code: @Html.TextBoxFor(x => x.ZipCode)</p>
-    <p>Enter Country Code: @Html.TextBoxFor(x => x.CountryCode)</p>
-    <input type="submit" value="submit" />
+    <br />
+    <br />
+    <div class="wrap">
+        <p class="tebox">Enter Zip Code: @Html.TextBoxFor(x => x.ZipCode)</p>
+        <p class="tebox">Enter Country Code: @Html.TextBoxFor(x => x.CountryCode)</p>
+        <input type="submit" value="submit" />
+    </div>
 }
 

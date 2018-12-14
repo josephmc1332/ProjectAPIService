@@ -29,19 +29,31 @@ namespace APIService.Controllers
 
             return View("Response", client);
         }
-        [HttpGet]
+       [HttpGet]
         public ViewResult Weather()
         {
             ViewBag.Title = "Weather";
 
             return View();
         }
-        [HttpPost]
+       [HttpPost]
         public ViewResult Weather(WeatherProfile profile)
         {
             ViewBag.Title = "Report";
 
             return View("Report", profile);
+        }
+        [HttpGet]
+        public ViewResult FindFood()
+        {
+
+            return View();
+        }
+      
+        public ViewResult FindFood(FoodModel food)
+        {
+
+            return View("FoodDetails", food);
         }
     }
 }
