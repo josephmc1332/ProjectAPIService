@@ -27,7 +27,7 @@ namespace APIService.Models
             client.EndPoint = complete;
             jsonText = client.MakeRequest();
             Summary = FindName();
-            return "c";
+            return " ";
         }
         public Queue<string> FillQ(Queue<string> q)
         {
