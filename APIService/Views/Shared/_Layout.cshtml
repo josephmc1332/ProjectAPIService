@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("APIService", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Travel Buddy", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -32,6 +32,7 @@
                     <li>@Html.ActionLink("Test Call", "Check", "Home")</li>
                     <li>@Html.ActionLink("Weather", "Weather", "Home")</li>
                     <li>@Html.ActionLink("Find Me Food", "FindFood", "Home")</li>
+                    <li>@Html.ActionLink("Find Hotel", "FindHotel", "Home")</li>
 
                 </ul>
             </div>
@@ -41,7 +42,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - APIService</p>
+            <p>&copy; @DateTime.Now.Year - Travel Buddy</p>
         </footer>
     </div>
 

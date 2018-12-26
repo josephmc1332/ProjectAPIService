@@ -1,0 +1,27 @@
+﻿@model APIService.Models.HotelModel
+
+@{
+    ViewBag.Title = "HotelDetails";
+}
+
+<h1 style="text-align : center;">Hotel Details</h1>
+<p>@Model.FindHotel()</p> 
+@foreach (var item in Model.d)
+{
+    if(Model.Counter % 6 == 0)
+    {
+        <p>@item.Value</p>
+        <br />
+    }
+    else if(Model.Counter % 6 == 1)
+    {
+        <h2>@item.Value</h2>
+    }
+    else
+    {
+        <p>@item.Value</p>
+    }
+    Model.Counter++;
+
+}
+

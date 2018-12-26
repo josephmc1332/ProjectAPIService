@@ -156,6 +156,7 @@
     </Compile>
     <Compile Include="Models\ClientRequest.cs" />
     <Compile Include="Models\FoodModel.cs" />
+    <Compile Include="Models\Hotels.cs" />
     <Compile Include="Models\WeatherProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -204,6 +205,8 @@
     <Content Include="Views\Home\Weather.cshtml" />
     <Content Include="Views\Home\FindFood.cshtml" />
     <Content Include="Views\Home\FoodDetails.cshtml" />
+    <Content Include="Views\Home\FindHotel.cshtml" />
+    <Content Include="Views\Home\HotelDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

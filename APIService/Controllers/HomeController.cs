@@ -45,14 +45,23 @@ namespace APIService.Controllers
         [HttpGet]
         public ViewResult FindFood()
         {
-
             return View();
         }
         [HttpPost]
         public ViewResult FindFood(FoodModel food)
         {
-
             return View("FoodDetails", food);
         }
+        [HttpGet]
+        public ViewResult FindHotel()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ViewResult FindHotel(HotelModel hotel)
+        {
+            return View("HotelDetails", hotel);
+        }
+
     }
 }

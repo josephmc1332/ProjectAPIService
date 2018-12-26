@@ -29,8 +29,12 @@ namespace APIService.Models
             FindCity(Response);
             return City;
         }
+        /// <summary>
+        /// this will build the complete URI based off of text the user will input
+        /// </summary>
         public void BuildURI()
         {
+            
             string addZipCountry = "?zip=" + ZipCode + "," + CountryCode;
             string addUnit = "&units=imperial";
             string key = "&appid=2700d650159919f352b27e0c318d5beb";

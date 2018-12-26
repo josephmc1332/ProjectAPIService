@@ -1,0 +1,33 @@
+﻿@model APIService.Models.HotelModel
+
+@{
+    ViewBag.Title = "FindHotel";
+}
+
+<style>
+    .tebox {
+        font-family : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-align : center;
+    }
+    .wrap {
+        border : dashed;
+        text-align : center;
+       
+    }
+</style>
+<h2 style="text-align : center; padding-right : 3em; font-family : 'Trebuchet MS'">Find Hotel</h2> 
+
+@using (Html.BeginForm("FindHotel", "Home", FormMethod.Post))
+{
+   
+
+    <div class="wrap">
+        <br />
+        <p class="tebox">What city? @Html.TextBoxFor(m => m.UserCity)</p>
+        <div style="text-align : center; padding-right: 15em;">
+            <input type="submit" value="Submit" style="font-family : 'Trebuchet MS'; border : groove;"/>
+        </div>
+        <br />
+    </div>
+}
+
