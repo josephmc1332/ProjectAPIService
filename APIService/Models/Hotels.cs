@@ -10,14 +10,15 @@ namespace APIService.Models
         public string Query { get; set; } 
         public string UserCity { get; set; }
         public int Counter { get; set; } = 1;
-
         public Dictionary<string, string> d = new Dictionary<string, string>();
 
         public void BuildURI()
         {
             string send = $"http://query.yahooapis.com/v1/public/yql?q=select * from local.search where query=\"hotels\" and location=\"{UserCity}\"&format=json";
-            ClientRequest client = new ClientRequest();
-            client.EndPoint = send;
+            ClientRequest client = new ClientRequest
+            {
+                EndPoint = send
+            };
             Query = client.MakeRequest();
         }
         public Queue<string> FillQ()
@@ -31,7 +32,6 @@ namespace APIService.Models
             q.Enqueue("Distance");
 
             return q;
-
         }
         public string FindHotel()
         {
@@ -57,7 +57,6 @@ namespace APIService.Models
                     }
                     d.Add(lap.ToString() + q.Dequeue(), attr);
                     attr = string.Empty;
-
                 }
                 if(q.Count == 0 && lap <= 7)
                 {
